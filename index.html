@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domótica Light - Control Neon</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Control de Luz</h1>
+            <button id="theme-toggle" class="clay-btn theme-btn" aria-label="Cambiar modo claro/oscuro">🌙</button>
+        </header>
+
+        <section class="bulb-container">
+            <div id="bulb" class="bulb" aria-label="Bombilla indicadora de estado"></div>
+            <div class="bulb-base"></div> <!-- Parte decorativa del socket de la bombilla -->
+        </section>
+
+        <section class="controls">
+            <button id="btn-on" class="clay-btn btn-on" type="button">Encender</button>
+            <button id="btn-off" class="clay-btn btn-off" type="button">Apagar</button>
+        </section>
+    </main>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

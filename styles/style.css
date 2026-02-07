@@ -1,0 +1,183 @@
+:root {
+    /* Paleta de Colores Claymorphism (Amigables) */
+    --bg-color: #e0e5ec;
+    --text-color: #485460;
+    --shadow-light: #ffffff;
+    --shadow-dark: #a3b1c6;
+    
+    /* Neon Colors */
+    --neon-green: #39ff14;
+    --bulb-off: #cbd2d9;
+    
+    /* Button Colors */
+    --primary-btn: #e0e5ec;
+    --success-btn: #e0e5ec; 
+    --danger-btn: #e0e5ec; 
+}
+
+/* Variables para Modo Oscuro */
+body.dark-mode {
+    --bg-color: #2d3436;
+    --text-color: #dfe6e9;
+    --shadow-light: #3d4548; /* Luz sutil en oscuro */
+    --shadow-dark: #1b1f21;  /* Sombra profunda */
+    --bulb-off: #4a5568;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    background-color: var(--bg-color);
+    padding: 40px;
+    border-radius: 30px;
+    /* Claymorphism Card Effect */
+    box-shadow: 9px 9px 16px var(--shadow-dark), 
+                -9px -9px 16px var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+header h1 {
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.theme-btn {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Bulb Styles --- */
+.bulb-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 180px;
+}
+
+.bulb {
+    width: 100px;
+    height: 110px;
+    background-color: var(--bulb-off);
+    border-radius: 50% 50% 42% 42%;
+    /* Efecto Clay apagado */
+    box-shadow: inset 6px 6px 10px var(--shadow-dark), 
+                inset -6px -6px 10px var(--shadow-light);
+    transition: all 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.bulb-base {
+    width: 44px;
+    height: 35px;
+    background-color: #9daab9;
+    /* Efecto de rosca de bombillo */
+    background: repeating-linear-gradient(
+        180deg, 
+        #9daab9 0px, 
+        #9daab9 8px, 
+        #8592a1 8px, 
+        #8592a1 10px
+    );
+    margin-top: -8px;
+    border-radius: 0 0 10px 10px;
+    z-index: 1;
+    box-shadow: 5px 5px 10px var(--shadow-dark);
+}
+
+/* Estado Encendido */
+.bulb.active {
+    background-color: var(--neon-green);
+    /* Neon Glow Effect */
+    box-shadow: 0 0 20px var(--neon-green),
+                0 0 40px var(--neon-green),
+                0 0 80px var(--neon-green),
+                inset 6px 6px 10px rgba(255, 255, 255, 0.5); /* Inner shine */
+    border: 2px solid #fff;
+}
+
+/* --- Controls Styles --- */
+.controls {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.clay-btn {
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Clay Button Effect */
+    box-shadow: 6px 6px 10px var(--shadow-dark), 
+                -6px -6px 10px var(--shadow-light);
+    transition: all 0.2s ease;
+}
+
+.clay-btn:active {
+    /* Pressed effect */
+    box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+    transform: scale(0.98);
+}
+
+.btn-on {
+    color: #27ae60;
+}
+
+.btn-off {
+    color: #c0392b;
+}
+
+/* Responsividad para Tablet/Mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .clay-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
