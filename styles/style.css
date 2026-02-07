@@ -128,6 +128,8 @@ header {
                 0 0 80px var(--neon-green),
                 inset 6px 6px 10px rgba(255, 255, 255, 0.5); /* Inner shine */
     border: 2px solid #fff;
+    /* Control de intensidad */
+    filter: brightness(var(--bulb-intensity, 1));
 }
 
 /* --- Controls Styles --- */
@@ -180,4 +182,55 @@ header {
         padding: 12px 24px;
         font-size: 0.9rem;
     }
+}
+
+/* --- Slider Styles --- */
+.slider-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.slider-label {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.clay-slider {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 15px;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.clay-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px 8px var(--shadow-dark), 
+                -4px -4px 8px var(--shadow-light);
+    cursor: pointer;
+    border: 2px solid var(--text-color);
+}
+
+.clay-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px 8px var(--shadow-dark), 
+                -4px -4px 8px var(--shadow-light);
+    cursor: pointer;
+    border: 2px solid var(--text-color);
 }

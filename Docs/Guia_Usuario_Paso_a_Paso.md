@@ -40,6 +40,12 @@ Verás una tarjeta centrada en la pantalla con estilo suave (Claymorphism).
 2.  Haz clic para alternar entre el modo claro y el oscuro.
 3.  La aplicación recordará tu preferencia la próxima vez que la abras.
 
+### Ajustar Intensidad de Luz (Nuevo)
+1.  Enciende la luz si está apagada.
+2.  Ubica el deslizador (slider) en la parte inferior de la tarjeta, bajo los botones.
+3.  Arrastra el círculo hacia la izquierda para **disminuir el brillo** o hacia la derecha para **aumentarlo**.
+4.  El efecto se ve en tiempo real sobre la bombilla.
+
 ## 4. Solución de Problemas
 
 **P: Hago clic en los botones pero no pasa nada.**

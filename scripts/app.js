@@ -31,6 +31,12 @@ const btnOff = document.getElementById('btn-off');
 const themeToggleBtn = document.getElementById('theme-toggle');
 
 /**
+ * Referencia al slider de intensidad.
+ * @type {HTMLInputElement}
+ */
+const dimmerInput = document.getElementById('dimmer');
+
+/**
  * Enciende la bombilla agregando la clase 'active'.
  * Aplica los efectos visuales de neón definidos en CSS.
  * 
@@ -87,6 +93,22 @@ function loadTheme() {
     }
 }
 
+/**
+ * Actualiza la intensidad de la bombilla basada en el slider.
+ * Aplica una variable CSS personalizada.
+ * 
+ * @function
+ * @returns {void}
+ */
+function updateIntensity() {
+    if (bulbElement && dimmerInput) {
+        // Convertimos el valor (10-100) a decimal (0.1 - 1.0)
+        const intensity = dimmerInput.value / 100;
+        bulbElement.style.setProperty('--bulb-intensity', intensity);
+        console.log(`Intensidad ajustada a: ${intensity}`);
+    }
+}
+
 // Cargar tema al inicio
 loadTheme();
 
@@ -104,6 +126,14 @@ if (btnOn && btnOff) {
     
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', toggleTheme);
+    }
+
+    if (dimmerInput) {
+        /**
+         * Escucha cambios en el slider de intensidad.
+         * 'input' se dispara mientras se arrastra.
+         */
+        dimmerInput.addEventListener('input', updateIntensity);
     }
 } else {
     console.error('No se encontraron los elementos de control en el DOM.');
