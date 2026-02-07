@@ -46,6 +46,13 @@ Verás una tarjeta centrada en la pantalla con estilo suave (Claymorphism).
 3.  Arrastra el círculo hacia la izquierda para **disminuir el brillo** o hacia la derecha para **aumentarlo**.
 4.  El efecto se ve en tiempo real sobre la bombilla.
 
+### Cambiar el Color de la Luz (Nuevo)
+1.  Al final de la tarjeta, encontrarás una sección etiquetada como **"Color Luz"**.
+2.  Verás un círculo que muestra el color actual (por defecto verde).
+3.  Haz clic sobre ese círculo para abrir el selector de colores nativo de tu dispositivo.
+4.  Elige el color que prefieras (Rojo, Azul, Magenta, etc.).
+5.  La bombilla cambiará inmediatamente a ese color, manteniendo el efecto Brillante/Neón.
+
 ## 4. Solución de Problemas
 
 **P: Hago clic en los botones pero no pasa nada.**

@@ -37,6 +37,12 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 const dimmerInput = document.getElementById('dimmer');
 
 /**
+ * Referencia al selector de color.
+ * @type {HTMLInputElement}
+ */
+const colorPicker = document.getElementById('color-picker');
+
+/**
  * Enciende la bombilla agregando la clase 'active'.
  * Aplica los efectos visuales de neón definidos en CSS.
  * 
@@ -109,6 +115,23 @@ function updateIntensity() {
     }
 }
 
+/**
+ * Actualiza el color de la bombilla.
+ * Aplica una variable CSS personalizada.
+ * 
+ * @function
+ * @param {Event} event - El evento de cambio de input color
+ * @returns {void}
+ */
+function updateColor(event) {
+    if (bulbElement && event.target) {
+        const newColor = event.target.value;
+        // Asignamos a la variable root o directamenet al elemento para que sobrescriba
+        bulbElement.style.setProperty('--bulb-color', newColor);
+        console.log(`Color cambiado a: ${newColor}`);
+    }
+}
+
 // Cargar tema al inicio
 loadTheme();
 
@@ -134,6 +157,14 @@ if (btnOn && btnOff) {
          * 'input' se dispara mientras se arrastra.
          */
         dimmerInput.addEventListener('input', updateIntensity);
+    }
+
+    if (colorPicker) {
+        /**
+         * Escucha cambios en el selector de color.
+         * 'input' se dispara cambios en tiempo real.
+         */
+        colorPicker.addEventListener('input', updateColor);
     }
 } else {
     console.error('No se encontraron los elementos de control en el DOM.');
